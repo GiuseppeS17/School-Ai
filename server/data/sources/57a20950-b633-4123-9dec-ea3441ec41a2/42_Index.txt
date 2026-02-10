@@ -1,0 +1,80 @@
+Laws and Regulatory Compliance
+Data Roles and Responsibilities
+Data Retention and Disposal
+Privacy Impact Assessment
+What Next?
+Glossary of Essential Terms and Components
+Index
+
+About the Author
+Marty M. Weiss has spent most of his career in
+information security and risk management, helping large
+organizations. Marty holds a bachelor of science degree
+in computer studies from the University of Maryland
+University College and an MBA from the Isenberg School
+of Management at the University of Massachusetts
+Amherst. He holds several certifications, including
+CISSP, CISA, and Security+. Marty has authored and
+coauthored more than a half-dozen books on
+information technology, many that have been described
+as riveting and Dostoevsky-esque in reviews by his
+mother. A Florida native, he now lives in New England.
+
+Dedication
+This book is dedicated to my parents.
+
+Acknowledgments
+Thank you, the reader of this book. It’s a pleasure to help
+others achieve a goal, and I’m thankful for that
+opportunity. Thank you to the entire team that helped to
+bring this book together. I’d like to acknowledge, in
+particular, Carole Jelen, Nancy Davis, Ellie Bru, Chris
+Crayton, Mandie Frank, and Kitty Wilson. Also, thank
+you, Diane Barrett. While you weren’t directly involved
+in this edition, many of your words and ideas exist from
+previous editions. Finally, thank you to my friends and
+family for their support and understanding through the
+entire process.
+
+About the Technical Reviewer
+Chris Crayton is a technical consultant, trainer,
+author, and industry-leading technical editor. He has
+worked as a computer technology and networking
+instructor, information security director, network
+administrator, network engineer, and PC specialist. Chris
+has authored several print and online books on PC
+repair, CompTIA A+, CompTIA Security+, and Microsoft
+Windows. He has also served as technical editor and
+content contributor on numerous technical titles for
+several of the leading publishing companies. He holds
+numerous industry certifications, has been recognized
+with many professional and teaching awards, and has
+served as a state-level SkillsUSA final competition judge.
+
+We Want to Hear from You!
+As the reader of this book, you are our most important
+critic and commentator. We value your opinion and want
+to know what we’re doing right, what we could do better,
+what areas you’d like to see us publish in, and any other
+words of wisdom you’re willing to send our way.
+We welcome your comments. You can email or write to
+let us know what you did or didn’t like about this book—
+as well as what we can do to make our books better.
+Please note that we cannot help you with technical
+problems related to the topic of this book.
+When you write, please be sure to include this book’s title
+and author as well as your name and email address. We
+will carefully review your comments and share them with
+the author and editors who worked on the book.
+Email: community@informit.com
+
+Reader Services
+Register your copy of CompTIA Security+ SY0-601
+Exam Cram at www.pearsonitcertification.com for
+convenient access to downloads, updates, and
+corrections as they become available. To start the
+registration process, go to
+www.pearsonitcertification.com/register and log in or
+create an account.* Enter the product ISBN
+9780136798675 and click Submit. When the process is
+complete, you will find any available bonus c

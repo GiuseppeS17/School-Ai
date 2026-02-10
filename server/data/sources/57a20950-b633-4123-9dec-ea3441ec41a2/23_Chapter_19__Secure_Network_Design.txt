@@ -1,0 +1,21 @@
+agement
+Disabling Unnecessary Ports and Services
+Least Functionality
+Secure Configurations
+Trusted Operating System
+What Next?
+Chapter 19:
+Secure Network Design
+Network Devices and Segmentation
+Routers
+
+Network Address Translation (NAT)
+Switches
+Port Security
+Virtual Local Area Network (VLAN)
+Bridges
+Security Devices and Boundaries
+Screened Subnet
+Web Application Firewalls
+Proxies
+Unified T

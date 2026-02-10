@@ -1,0 +1,15 @@
+hysical Attacks
+Adversarial Artificial Intelligence (AI)
+Password Attacks
+Birthday Attacks
+Downgrade Attacks
+What Next?
+Chapter 3:
+Application Attacks
+Race Conditions
+Improper Software Handling
+Resource Exhaustion
+Overflows
+Code Injections
+Driver Manipulation
+Request Forgeries

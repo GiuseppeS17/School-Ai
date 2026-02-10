@@ -1,0 +1,20 @@
+hreat Management (UTM)
+VPN Concentrators
+NIDS and NIPS
+Detection Methods
+Analytics
+Network Access Control (NAC)
+What Next?
+Chapter 20:
+Wireless Security Settings
+Access Methods
+Wireless Cryptographic Protocols
+Wired Equivalent Privacy (WEP)
+Wi-Fi Protected Access (WPA)
+Temporal Key Integrity Protocol
+Counter Mode with Cipher Block
+Chaining Message Authentication
+Code Protocol
+Wi-Fi Protected Access Version 2 (WPA2)
+Wi-Fi Protected Access Version 3 (WPA3)
+Authenticati

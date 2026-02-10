@@ -1,0 +1,44 @@
+on Protocols
+
+Wireless Access Installations
+Antenna Types, Placement, and Power
+MAC Filter
+Disabling SSID Broadcast
+What Next?
+Chapter 21:
+Secure Mobile Solutions
+Communication Methods
+Mobile Device Management Concepts
+Device, Application, and Content
+Management
+Mobile Device Management
+Mobile Content Management
+Mobile Application Management
+Protections
+Screen Locks, Passwords, and PINs
+Biometrics and Context-Aware
+Authentication
+Remote Wiping
+Geolocation, Geofencing, and Push
+Notifications
+Storage Segmentation and
+Containerization
+Full Device Encryption (FDE)
+Enforcement and Monitoring
+Jailbreaking and Rooting
+Custom Firmware, Carrier Unlocking,
+and OTA Updates
+Third-Party App Stores and Sideloading
+Storage and USB OTG
+
+Enforcement for Normal Device
+Functions
+Wi-Fi Methods, Tethering, and Payments
+Deployment Models
+BYOD, CYOD, COPE, and Corporate-Owned
+Devices
+Virtual Desktop Infrastructure
+Deployment Strategies
+Architecture/Infrastructure
+Considerations
+Adherence to Corporate Policies

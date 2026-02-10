@@ -1,0 +1,30 @@
+Models
+IaaS
+PaaS
+SaaS
+Deployment Models
+Private
+Public
+Hybrid
+Community
+What Next?
+Chapter 11:
+Secure Application Development, Deployment,
+and Automation
+Application Environment
+Development and Testing
+Staging and Production
+Provisioning and Deprovisioning
+Integrity Measurement
+Change Management and Version Control
+Secure Coding Techniques
+
+Normalization
+Stored Procedures
+Encryption, Obfuscation, and Camouflage
+Code Reuse and Dead Code
+Use of Third-Party Libraries and SDKs
+Server-Side vs. Client-Side Execution and
+Validation
+Data Exposure
+Proper Err

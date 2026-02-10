@@ -1,0 +1,31 @@
+witching
+Using Network Address Allocation
+Using Time Synchronization
+Using Subscription Services
+What Next?
+Chapter 18:
+Host and Application Security Solutions
+Endpoint Protection
+Firewalls and HIPS/HIDS Solutions
+Anti-Malware and Other Host Protections
+
+Endpoint Detection and Response (EDR)
+Data Execution Prevention (DEP)
+Data Loss Prevention (DLP)
+Removable Media Control
+Application Allow/Block Lists
+Web Application Firewall
+Application Security
+Code Analyzers
+Static Code Analyzers
+Dynamic Analysis
+Stress Testing
+Application Sandboxing
+Hardware and Firmware Security
+FDE and SED
+TPM and HSM
+Boot Integrity
+Boot Attestation
+Hardware Root of Trust
+Operating System Security
+Patch Man

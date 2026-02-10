@@ -1,0 +1,1031 @@
+ontent
+under Registered Products.
+*Be sure to check the box to indicate that you would like
+to hear from us to receive exclusive discounts on future
+editions of this product.
+®
+
+Introduction
+Welcome to CompTIA Security+ SY0-601 Exam Cram,
+sixth edition. This book helps you get ready to take and
+pass the CompTIA Security+ SY0-601 exam.
+This book is designed to remind you of everything you
+need to know to pass the SY0-601 certification exam.
+Each chapter includes a number of practice questions
+that should give you a reasonably accurate assessment of
+your knowledge, and, yes, we’ve provided the answers
+and their explanations for these questions. Read this
+book, understand the material, and you’ll stand a very
+good chance of passing the real test.
+Exam Cram books help you understand and appreciate
+the subjects and materials you need to know to pass
+CompTIA certification exams. Exam Cram books are
+aimed strictly at test preparation and review. They do not
+teach you everything you need to know about a subject.
+Instead, the authors streamline and highlight the
+pertinent information by presenting and dissecting the
+questions and problems they’ve discovered that you’re
+likely to encounter on a CompTIA test.
+We strongly recommend that you spend some time
+installing and working with security tools such as
+Wireshark and Metasploit and experimenting with the
+many network and security-related resources provided
+with many operating systems. The Security+ exam
+focuses on such activities and the knowledge and skills
+they can provide you. Nothing beats hands-on
+experience and familiarity when it comes to
+understanding the questions you’re likely to encounter
+on a certification test. Book learning is essential, but
+®
+
+without a doubt, hands-on experience is the best teacher
+of all!
+Let’s begin by looking at preparation for the exam.
+HOW TO PREPARE FOR THE EXAM
+This text follows the official exam objectives closely to
+help ensure your success. The CompTIA exam covers 5
+domains and 35 objectives. This book is divided into 5
+parts and 35 chapters, aligning with those domains and
+objectives. These official objectives from CompTIA can
+be found here:
+https://www.comptia.org/training/resources/exam-
+objectives.
+As you examine the numerous exam topics now covered
+in Security+, resist the urge to panic! This book you are
+holding will provide you with the knowledge (and
+confidence) that you need to succeed. You just need to
+make sure you read it and follow the guidance it provides
+throughout your Security+ journey.
+Practice Tests
+This book is filled with practice exam questions to get
+you ready! Cram quizzes end each chapter, and each
+question also includes complete explanations.
+In addition, the book includes two additional full
+practice tests in the Pearson Test Prep software, available
+to you either online or as an offline Windows application.
+To access the practice exams, please see the instructions
+in the card inserted in the sleeve in the back of the book.
+This card includes a unique access code that enables you
+to activate your exams in the Pearson Test Prep software.
+In case you are interested in more practice exams than
+are provided with this book, Pearson IT Certification
+publishes a Premium Edition eBook and Practice Test
+
+product. In addition to providing you with three eBook
+files (EPUB, PDF, and Kindle) this product provides you
+with two additional exams’ worth of questions. The
+Premium Edition version also offers you a link to the
+specific section in the book that presents an overview of
+the topic covered in the question, allowing you to easily
+refresh your knowledge. The insert card in the back of
+the book includes a special offer for an 80% discount off
+of this Premium Edition eBook and Practice Test
+product, which is an incredible deal.
+TAKING A CERTIFICATION EXAM
+After you prepare for your exam, you need to register
+with a testing center. At the time of this writing, the cost
+to take the Security+ exam is US $349 for individuals.
+Students in the United States are eligible for a significant
+discount. In addition, check with your employer as many
+workplaces provide reimbursement programs for
+certification exams. For more information about these
+discounts, you can contact a local CompTIA sales
+representative, who can answer any questions you might
+have. If you don’t pass, you can take the exam again for
+the same cost as the first attempt until you pass. The test
+is administered by Pearson VUE testing centers, with
+locations globally. In addition, the CompTIA Security+
+certification is a requirement for many within the U.S.
+military, and testing centers are available on some
+military bases.
+You will have 90 minutes to complete the exam. The
+exam consists of a maximum of 90 questions. If you have
+prepared, you should find that this is plenty of time to
+properly pace yourself and review the exam before
+submission.
+Arriving at the Exam Location
+
+As with any other examination, arrive at the testing
+center early (at least 15 minutes). Be prepared! You need
+to bring two forms of identification (one with a picture).
+The testing center staff requires proof that you are who
+you say you are and that someone else is not taking the
+test for you. Arrive early because if you are late, you will
+be barred from entry and will not receive a refund for the
+cost of the exam.
+ExamAlert
+You’ll be spending a lot of time in the exam room.
+Plan on using the full 90 minutes allotted for your
+exam and surveys. Policies differ from location to
+location regarding bathroom breaks, so check with
+the testing center before beginning the exam.
+In the Testing Center
+You will not be allowed to take into the examination
+room study materials or anything else that could raise
+suspicion that you’re cheating. This includes practice test
+material, books, exam prep guides, and other test aids.
+The testing center will provide you with scratch paper
+and a pen or pencil. These days, this often comes in the
+form of an erasable whiteboard.
+Examination results are available immediately after you
+finish the exam. After submitting the exam, you will be
+notified if you have passed or failed. I trust that if you are
+reading this book, you will pass. The test administrator
+will also provide you with a printout of your results.
+ABOUT THIS BOOK
+The ideal reader for an Exam Cram book is someone
+seeking certification. However, it should be noted that an
+Exam Cram book is a very easily readable, rapid
+
+presentation of facts. Therefore, an Exam Cram book is
+also extremely useful as a quick reference manual.
+The book is designed so that you can either read it cover
+to cover or jump across chapters, as needed. Because the
+book chapters align with the exam objectives, some
+chapters may have slight overlap on topics. Where
+required, references to the other chapters are provided
+for you. If you need to brush up on a topic or if you have
+to bone up for a second try at the exam, you can use the
+index, table of contents, or Table I.1 to go straight to the
+topics and questions that you need to study. Beyond
+helping you prepare for the test, we think you’ll find this
+book useful as a tightly focused reference on some of the
+most important aspects of the Security+ certification.
+Table I.1 SY0-601 Exam Domains and
+Objectives
+Exam DomainObjectiveChapter in Book That Covers It
+1.0 Attacks, 
+Threats, 
+and 
+Vulnerabili
+ties
+1.1 Compare and contrast different types 
+of social engineering techniques.
+C
+h
+a
+p
+t
+e
+r 
+1
+1.0 Attacks, 
+Threats, 
+and 
+Vulnerabili
+ties
+1.2 Given a scenario, analyze potential 
+indicators to determine the type of attack.
+C
+h
+a
+p
+t
+e
+r 
+2
+1.0 Attacks, 
+Threats, 
+and 
+1.3 Given a scenario, analyze potential 
+indicators associated with application 
+attacks.
+C
+h
+a
+p
+
+Vulnerabili
+ties
+t
+e
+r 
+3
+1.0 Attacks, 
+Threats, 
+and 
+Vulnerabili
+ties
+1.4 Given a scenario, analyze potential 
+indicators associated with network 
+attacks.
+C
+h
+a
+p
+t
+e
+r 
+4
+1.0 Attacks, 
+Threats, 
+and 
+Vulnerabili
+ties
+1.5 Explain different threat actors, vectors, 
+and intelligence sources.
+C
+h
+a
+p
+t
+e
+r 
+5
+1.0 Attacks, 
+Threats, 
+and 
+Vulnerabili
+ties
+1.6 Explain the security concerns 
+associated with various types of 
+vulnerabilities.
+C
+h
+a
+p
+t
+e
+r 
+6
+1.0 Attacks, 
+Threats, 
+and 
+Vulnerabili
+ties
+1.7 Summarize the techniques used in 
+security assessments.
+C
+h
+a
+p
+t
+e
+r 
+7
+1.0 Attacks, 
+Threats, 
+and 
+Vulnerabili
+ties
+1.8 Explain the techniques used in 
+penetration testing.
+C
+h
+a
+p
+t
+e
+r 
+8
+
+2.0 
+Architectur
+e and 
+Design
+2.1 Explain the importance of security 
+concepts in an enterprise environment.
+C
+h
+a
+p
+t
+e
+r 
+9
+2.0 
+Architectur
+e and 
+Design
+2.2 Summarize virtualization and cloud 
+computing concepts.
+C
+h
+a
+p
+t
+e
+r 
+1
+0
+2.0 
+Architectur
+e and 
+Design
+2.3 Summarize secure application 
+development, deployment, and 
+automation concepts.
+C
+h
+a
+p
+t
+e
+r 
+1
+1
+2.0 
+Architectur
+e and 
+Design
+2.4 Summarize authentication and 
+authorization design concepts.
+C
+h
+a
+p
+t
+e
+r 
+1
+2
+2.0 
+Architectur
+e and 
+Design
+2.5 Given a scenario, implement 
+cybersecurity resilience.
+C
+h
+a
+p
+t
+e
+r 
+1
+3
+
+2.0 
+Architectur
+e and 
+Design
+2.6 Explain the security implications of 
+embedded and specialized systems.
+C
+h
+a
+p
+t
+e
+r 
+1
+4
+2.0 
+Architectur
+e and 
+Design
+2.7 Explain the importance of physical 
+security controls.
+C
+h
+a
+p
+t
+e
+r 
+1
+5
+2.0 
+Architectur
+e and 
+Design
+2.8 Summarize the basics of cryptographic 
+concepts.
+C
+h
+a
+p
+t
+e
+r 
+1
+6
+3.0 
+Implement
+ation
+3.1 Given a scenario, implement secure 
+protocols.
+C
+h
+a
+p
+t
+e
+r 
+1
+7
+3.0 
+Implement
+ation
+3.2 Given a scenario, implement host or 
+application security solutions.
+C
+h
+a
+p
+t
+e
+r 
+1
+8
+
+3.0 
+Implement
+ation
+3.3 Given a scenario, implement secure 
+network designs.
+C
+h
+a
+p
+t
+e
+r 
+1
+9
+3.0 
+Implement
+ation
+3.4 Given a scenario, install and configure 
+wireless security settings.
+C
+h
+a
+p
+t
+e
+r 
+2
+0
+3.0 
+Implement
+ation
+3.5 Given a scenario, implement secure 
+mobile solutions.
+C
+h
+a
+p
+t
+e
+r 
+2
+1
+3.0 
+Implement
+ation
+3.6 Given a scenario, apply cybersecurity 
+solutions to the cloud.
+C
+h
+a
+p
+t
+e
+r 
+2
+2
+3.0 
+Implement
+ation
+3.7 Given a scenario, implement identity 
+and account management controls.
+C
+h
+a
+p
+t
+e
+r 
+2
+3
+
+3.0 
+Implement
+ation
+3.8 Given a scenario, implement 
+authentication and authorization 
+solutions.
+C
+h
+a
+p
+t
+e
+r 
+2
+4
+3.0 
+Implement
+ation
+3.9 Given a scenario, implement public 
+key infrastructure.
+C
+h
+a
+p
+t
+e
+r 
+2
+5
+4.0 
+Operations 
+and 
+Incident 
+Response
+4.1 Given a scenario, use the appropriate 
+tool to assess organizational security.
+C
+h
+a
+p
+t
+e
+r 
+2
+6
+4.0 
+Operations 
+and 
+Incident 
+Response
+4.2 Summarize the importance of policies, 
+processes, and procedures for incident 
+response.
+C
+h
+a
+p
+t
+e
+r 
+2
+7
+4.0 
+Operations 
+and 
+Incident 
+Response
+4.3 Given an incident, utilize appropriate 
+data sources to support an investigation.
+C
+h
+a
+p
+t
+e
+r 
+2
+8
+
+4.0 
+Operations 
+and 
+Incident 
+Response
+4.4 Given an incident, apply mitigation 
+techniques or controls to secure an 
+environment.
+C
+h
+a
+p
+t
+e
+r 
+2
+9
+4.0 
+Operations 
+and 
+Incident 
+Response
+4.5 Explain the key aspects of digital 
+forensics.
+C
+h
+a
+p
+t
+e
+r 
+3
+0
+5.0 
+Governanc
+e, Risk, and 
+Compliance
+5.1 Compare and contrast various types of 
+controls.
+C
+h
+a
+p
+t
+e
+r 
+3
+1
+5.0 
+Governanc
+e, Risk, and 
+Compliance
+5.2 Explain the importance of applicable 
+regulations, standards, or frameworks 
+that impact organizational security 
+posture.
+C
+h
+a
+p
+t
+e
+r 
+3
+2
+5.0 
+Governanc
+e, Risk, and 
+Compliance
+5.3 Explain the importance of policies to 
+organizational security.
+C
+h
+a
+p
+t
+e
+r 
+3
+3
+
+5.0 
+Governanc
+e, Risk, and 
+Compliance
+5.4 Summarize risk management 
+processes and concepts.
+C
+h
+a
+p
+t
+e
+r 
+3
+4
+5.0 
+Governanc
+e, Risk, and 
+Compliance
+5.5 Explain privacy and sensitive data 
+concepts in relation to security.
+C
+h
+a
+p
+t
+e
+r 
+3
+5
+This book includes other helpful elements in addition to
+the actual logical, step-by-step learning progression of
+the chapters. Exam Cram books use elements such as
+ExamAlerts, notes, and practice questions to make
+information easier to read and absorb. This text also
+includes a Glossary to assist you.
+Note
+Reading this book from start to finish is not
+necessary; this book is set up so that you can quickly
+jump back and forth to find sections you need to
+study.
+Use the Cram Sheet to remember last-minute facts
+immediately before the exam. Use the practice questions
+to test your knowledge. You can always brush up on
+specific topics in detail by referring to the table of
+contents and the index. Even after you achieve
+certification, you can use this book as a rapid-access
+reference manual.
+
+Exam Objectives
+Table I.1 lists the skills the SY0-601 exam measures and
+the chapter in which each objective is discussed.
+The Chapter Elements
+Each Exam Cram book has chapters that follow a
+predefined structure. This structure makes Exam Cram
+books easy to read and provides a familiar format for all
+Exam Cram books. The following elements typically are
+used:
+▶ Chapter topics
+▶ Essential Terms and Components
+▶ Cram Quizzes
+▶ ExamAlerts
+▶ Notes
+▶ Available exam preparation software practice questions and answers
+Note
+Bulleted lists, numbered lists, tables, and graphics are
+also used where appropriate. A picture can paint a
+thousand words sometimes, and tables can help to
+associate different elements with each other visually.
+Now let’s look at each of the elements in detail:
+▶ Chapter topics: Each chapter contains details of all subject matter
+listed in the table of contents for that particular chapter. The objective of
+an Exam Cram book is to cover all the important facts without giving
+too much detail. When examples are required, they are included.
+▶ Essential Terms and Components: The start of every chapter
+contains a list of terms and concepts you should understand. These are
+all defined in the book’s accompanying Glossary.
+▶ Cram Quizzes: Each chapter concludes with multiple-choice
+questions to help ensure that you have gained familiarity with the
+chapter content.
+▶ ExamAlerts: ExamAlerts address exam-specific, exam-related
+information. An ExamAlert addresses content that is particularly
+important, tricky, or likely to appear on the exam. An ExamAlert looks
+like this:
+
+ExamAlert
+Make sure you remember the different ways in
+which you can access a router remotely. Know which
+methods are secure and which are not.
+▶ Notes: Notes typically contain useful information that is not directly
+related to the topic currently under consideration. To avoid breaking up
+the flow of the text, they are set off from the regular text.
+Note
+This is a note. You have already seen several notes.
+Other Book Elements
+Most of this Exam Cram book on Security+ follows the
+consistent chapter structure already described. However,
+there are various important elements that are not part of
+the standard chapter format. These elements apply to the
+entire book as a whole.
+▶ Practice questions: Exam-preparation questions conclude each
+chapter.
+▶ Answers and explanations for practice questions: These follow
+each practice question, providing answers and explanations to the
+questions.
+▶ Glossary: The Glossary defines important terms used in this book.
+▶ Cram Sheet: The Cram Sheet is a quick-reference, tear-out cardboard
+sheet of important facts that is useful for last-minute preparation. The
+Cram Sheet provides a simple summary of the facts that may be most
+difficult to remember.
+▶ Companion website: The companion website for your book allows
+you to access several digital assets that come with your book, including
+the following:
+▶ Pearson Test Prep software (both online and Windows desktop
+versions)
+▶ Key Terms Flash Cards application
+▶ A PDF version of the Cram Sheet
+To access the book’s companion website, simply follow
+these steps:
+
+1. Register your book by going to
+PearsonITCertification.com/register and entering the ISBN
+9780136798675.
+2. Respond to the challenge questions.
+3. Go to your account page and select the Registered Products tab.
+4. Click on the Access Bonus Content link under the product listing.
+PEARSON TEST PREP PRACTICE TEST
+SOFTWARE
+As noted previously, this book comes complete with the
+Pearson Test Prep practice test software. These practice
+tests are available to you either online or as an offline
+Windows application. To access the practice exams that
+were developed with this book, please see the
+instructions in the card inserted in the sleeve in the back
+of the book. This card includes a unique access code that
+enables you to activate your exams in the Pearson Test
+Prep software.
+Accessing the Pearson Test Prep So ware
+Online
+The online version of this software can be used on any
+device with a browser and connectivity to the Internet,
+including desktop machines, tablets, and smartphones.
+To start using your practice exams online, simply follow
+these steps:
+1. Go to http://www.PearsonTestPrep.com.
+2. Select Pearson IT Certification as your product group.
+3. Enter the email address and password for your account. If you don’t
+have an account on PearsonITCertification.com, you need to establish
+one by going to PearsonITCertification.com/join.
+4. In the My Products tab, click the Activate New Product button.
+5. Enter the access code printed on the insert card in the back of your
+book to activate your product. The product will now be listed in your
+My Products page.
+6. Click the Exams button to launch the exam settings screen and start
+your exam.
+
+Accessing the Pearson Test Prep So ware
+Offline
+If you wish to study offline, you can download and install
+the Windows version of the Pearson Test Prep software.
+There is a download link for this software on the book’s
+companion website, or you can just enter this link in
+your browser:
+http://www.pearsonitcertification.com/content/downloa
+ds/pcpt/engine.zip.
+To access the book’s companion website and the
+software, simply follow these steps:
+1. Register your book by going to
+PearsonITCertification.com/register and entering the ISBN
+9780136798675.
+2. Respond to the challenge questions.
+3. Go to your account page and select the Registered Products tab.
+4. Click on the Access Bonus Content link under the product listing.
+5. Click the Install Pearson Test Prep Desktop Version link under
+the Practice Exams section of the page to download the software.
+6. After the software finishes downloading, unzip all the files onto your
+computer.
+7. Double-click the application file to start the installation and follow the
+onscreen instructions to complete the registration.
+8. When the installation is complete, launch the application and click the
+Activate Exam button on the My Products tab.
+9. Click the Activate a Product button in the Activate Product Wizard.
+10. Enter the unique access code from the card in the sleeve in the back of
+your book and click the Activate button.
+11. Click Next and then click the Finish button to download the exam
+data to your application.
+12. To start using the practice exams, select the product and click the
+Open Exam button to open the exam settings screen.
+Note that the offline and online versions will sync
+together, so saved exams and grade results recorded in
+one version will be available to you in the other as well.
+Customizing Your Exams
+In the exam settings screen, you can choose to take
+exams in one of three modes:
+
+▶ Study Mode
+▶ Practice Exam Mode
+▶ Flash Card Mode
+Study Mode allows you to fully customize your exams
+and review answers as you are taking the exam. This is
+typically the mode you use first to assess your knowledge
+and identify information gaps. Practice Exam Mode locks
+certain customization options, as it presents a realistic
+exam experience. Use this mode when you are preparing
+to test your exam readiness. Flash Card Mode strips out
+the answers and presents you with only the question
+stem. This mode is great for late-stage preparation, when
+you really want to challenge yourself to provide answers
+without the benefit of seeing multiple-choice options.
+This mode will not provide the detailed score reports that
+the other two modes will, so it should not be used if you
+are trying to identify knowledge gaps.
+In addition to these three modes, you can select the
+source of your questions. You can choose to take exams
+that cover all of the chapters, or you can narrow your
+selection to just a single chapter or the chapters that
+make up specific parts in the book. All chapters are
+selected by default. If you want to narrow your focus to
+individual chapters, simply deselect all the chapters and
+then select only those on which you wish to focus in the
+Objectives area.
+You can also select the exam banks on which to focus.
+Each exam bank comes complete with a full exam of
+questions that cover topics in every chapter. The two
+Practice Exams printed in the book are available to you,
+as are two additional exams of unique questions. You can
+have the test engine serve up exams from all four banks
+or just from one individual bank by selecting the desired
+banks in the exam bank area.
+There are several other customizations you can make to
+your exam from the exam settings screen, such as the
+
+time you are allowed for taking the exam, the number of
+questions served up, whether to randomize questions
+and answers, whether to show the number of correct
+answers for multiple-answer questions, or whether to
+serve up only specific types of questions. You can also
+create custom test banks by selecting only questions that
+you have marked or questions on which you have added
+notes.
+Updating Your Exams
+If you are using the online version of the Pearson Test
+Prep software, you should always have access to the
+latest version of the software as well as the exam data. If
+you are using the Windows desktop version, every time
+you launch the software, it will check to see if there are
+any updates to your exam data and automatically
+download any changes that were made since the last time
+you used the software. You must be connected to the
+Internet at the time you launch the software.
+Sometimes, due to many factors, the exam data may not
+fully download when you activate an exam. If you find
+that figures or exhibits are missing, you may need to
+manually update your exams. To update a particular
+exam you have already activated and downloaded,
+simply select the Tools tab and click the Update
+Products button. Again, this is only an issue with the
+desktop Windows application.
+If you wish to check for updates to the Pearson Test Prep
+exam engine software, Windows desktop version, simply
+select the Tools tab and click the Update Application
+button. This will ensure you are running the latest
+version of the software engine.
+CONTACTING THE AUTHOR
+
+Hopefully, this book provides you with the tools you
+need to pass the Security+ exam. Feedback is
+appreciated. You can follow and contact the author on
+Twitter @martyweiss.
+Thank you for selecting my book; I have worked to apply
+the same concepts in this book that I have used in the
+hundreds of training classes I have taught. Spend your
+study time wisely and you, too, can achieve the Security+
+designation. Good luck on the exam, although if you
+carefully work through this text, you will certainly
+minimize the amount of luck required!
+
+Part I
+Attacks, Threats, and
+Vulnerabilities
+This part covers the following official
+Security+ SYO-601 exam objectives for
+Domain 1.0, “Attacks, Threats, and
+Vulnerabilities”:
+▶ 1.1 Compare and contrast different types of social engineering
+techniques.
+▶ 1.2 Given a scenario, analyze potential indicators to determine the
+type of attack.
+▶ 1.3 Given a scenario, analyze potential indicators associated with
+application attacks.
+▶ 1.4 Given a scenario, analyze potential indicators associated with
+network attacks.
+▶ 1.5 Explain different threat actors, vectors, and intelligence sources.
+▶ 1.6 Explain the security concerns associated with various types of
+vulnerabilities.
+▶ 1.7 Summarize the techniques used in security assessments.
+▶ 1.8 Explain the techniques used in penetration testing.
+For more information on the official CompTIA Security+
+SY0-601 exam topics, see the section “Exam Objectives”
+in the Introduction.
+The requirement to adequately assess the security
+posture of an enterprise environment and to be able to
+recommend and implement appropriate security
+solutions involves many complexities and requirements.
+Today’s networks and computer systems are complex
+and distributed across varying environments. To be able
+to assess these environments and make the best
+decisions about securing them, you must understand the
+
+risk associated with them—including attacks, threats,
+and vulnerabilities across the technology landscape. The
+chapters in this part of the book explore the many
+potential threats, the varying attack types, and
+vulnerabilities to help you understand and identify these
+potential dangers, as well as important measures and
+processes that can assist in managing the risk.
+
+Chapter 1
+Social Engineering
+Techniques
+This chapter covers the following official
+Security+ exam objective:
+▶ 1.1 Compare and contrast different types of social engineering
+techniques.
+Essential Terms and Components
+▶ social engineering
+▶ phishing
+▶ smishing
+▶ vishing
+▶ spam
+▶ spam over Internet messaging (SPIM)
+▶ spear phishing
+▶ Dumpster diving
+▶ shoulder surfing
+▶ pharming
+▶ tailgating
+▶ eliciting information
+▶ whaling
+▶ prepending
+▶ identity fraud
+▶ invoice scam
+▶ credential harvesting
+▶ reconnaissance
+▶ hoax
+▶ impersonation
+▶ watering hole attack
+▶ typo squatting
+▶ influence campaign
+
+▶ principles (reasons for effectiveness)
+Social engineering has been around as long as humans.
+Many people are familiar with face-to-face interactions
+in which one individual fishes for information in a
+deceptive way. Social engineering is the process by which
+an attacker seeks to extract useful information from
+users, often by just tricking them into helping the
+attacker. In many circumstances, social engineering is
+the precursor to more advanced attacks. Social
+engineering is extremely successful because it relies on
+human emotions. Common examples include the
+following:
+▶ An attacker calls a valid user and impersonates a guest, temp agent, or
+new user, asking for assistance in accessing the network or requesting
+details on the business processes of the organization.
+▶ An attacker contacts a legitimate user and poses as a technical aide,
+attempting to update some type of information. The attacker asks for
+identifying user details that can then be used to gain access.
+▶ An attacker poses as a network administrator, directing the legitimate
+user to reset the password to a specific value so t

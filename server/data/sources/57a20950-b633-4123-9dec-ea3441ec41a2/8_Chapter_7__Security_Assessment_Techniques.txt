@@ -1,0 +1,14 @@
+n-Premises
+Zero-Day
+Weak Configurations
+Improper or Weak Patch Management
+Third-Party Risks
+Impacts
+What Next?
+Chapter 7:
+Security Assessment Techniques
+Vulnerability Scans
+Intrusive vs. Non-Intrusive
+Credentialed vs. Non-Credentialed
+Threat Assessment
+Security Information

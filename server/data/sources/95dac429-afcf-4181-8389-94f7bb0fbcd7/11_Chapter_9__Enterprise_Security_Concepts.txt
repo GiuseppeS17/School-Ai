@@ -1,0 +1,18 @@
+sting Methodology
+Planning
+
+Discovery
+Attack
+Reporting
+Team Exercises
+What Next?
+Part II: Architecture and Design
+Chapter 9:
+Enterprise Security Concepts
+Configuration Management
+Data Confidentiality
+Data Loss Prevention
+Cloud Access Security Brokers
+Encryption and Data Obfuscation
+Rights Management
+Hardware Security Module (HSM

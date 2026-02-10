@@ -1,0 +1,20 @@
+rameworks
+Benchmarks and Secure Configuration Guides
+Platform- and Vendor-Specific Guides
+General-Purpose Guides
+What Next?
+Chapter 33:
+Organizational Security Policies
+Policy Framework
+Human Resource Management Policies
+Background Checks
+Onboarding and Offboarding
+
+Mandatory Vacations
+Separation of Duties
+Job Rotation
+Clean Desk Policies
+Role-Based Awareness and Training
+Continuing Education
+Acceptable Use Policy/Rules of Behavior
+Internet Usage

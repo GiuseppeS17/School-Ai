@@ -1,0 +1,11 @@
+Signing
+Memory Management
+Automation and Scripting
+Secure DevOps
+Scalability and Elasticity
+What Next?
+Chapter 12:
+Authentication and Authorization Design
+Identification and Authentication, Authorization,
+and Accounting (AAA)
+Multifactor Authenticati

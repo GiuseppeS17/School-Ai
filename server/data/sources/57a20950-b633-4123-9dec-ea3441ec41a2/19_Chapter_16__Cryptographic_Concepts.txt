@@ -1,0 +1,18 @@
+ng, Protected Distribution,
+and Faraday Cages
+HVAC
+
+Fire Suppression
+Hot and Cold Aisles
+Secure Data Destruction
+What Next?
+Chapter 16:
+Cryptographic Concepts
+Cryptosystems
+Keys
+Key Exchange
+Symmetric Algorithms
+Asymmetric Algorithms
+Elliptic Curve and Emerging Cryptography
+Session Keys
+Nonrep

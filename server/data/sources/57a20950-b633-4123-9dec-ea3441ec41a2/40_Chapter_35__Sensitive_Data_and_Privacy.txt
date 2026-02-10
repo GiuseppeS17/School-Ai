@@ -1,0 +1,12 @@
+l Functions
+Identification of Critical Systems
+Single Points of Failure
+
+Recovery Objectives
+MTTF, MTBF, and MTTR
+Impact
+What Next?
+Chapter 35:
+Sensitive Data and Privacy
+Sensitive Data Protection
+Data

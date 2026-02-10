@@ -1,0 +1,23 @@
+on
+Single Sign-on
+Federation
+Transitive Trust
+Authentication Technologies
+Tokens
+Biometrics
+Card Authentication
+Certificate-Based Authentication
+
+What Next?
+Chapter 13:
+Cybersecurity Resilience
+Redundancy
+High Availability
+Load Balancers
+NIC Teaming
+RAID
+Backups
+Full Backups
+Differential Backups
+Incremental Backups
+Copies and Sn

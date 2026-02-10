@@ -1,0 +1,22 @@
+nd Related Attacks
+Watering Hole Attacks
+Typo Squatting
+Hoaxes and Influence Campaigns
+Principles of Influence (Reasons for Effectiveness)
+What Next?
+Chapter 2:
+Attack Basics
+Malware
+Viruses
+Worms
+Trojan
+Rootkits
+Logic Bombs
+Bots
+Crypto-Malware
+
+Potentially Unwanted Programs (PUPs)
+Spyware
+Adware
+Cryptomining Software
+P

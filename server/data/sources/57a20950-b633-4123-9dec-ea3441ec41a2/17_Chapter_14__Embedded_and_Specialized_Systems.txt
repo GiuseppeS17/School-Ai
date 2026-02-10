@@ -1,0 +1,17 @@
+apshots
+Non-persistence
+Revert to Known State or Good
+Configuration
+Live Boot Media
+Defense in Depth
+What Next?
+Chapter 14:
+Embedded and Specialized Systems
+Embedded Systems
+SoC and RTOS
+SCADA and ICS
+Smart Devices and IoT
+Heating, Ventilation, Air Conditioning
+(HVAC)
+Multifunction Devices
+S

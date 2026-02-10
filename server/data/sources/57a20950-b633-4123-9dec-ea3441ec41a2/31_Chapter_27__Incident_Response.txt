@@ -1,0 +1,24 @@
+nnaissance and Discovery
+Exploitation Frameworks
+Packet Capture and Replay
+Password Crackers
+
+Forensics and Data Sanitization
+What Next?
+Chapter 27:
+Incident Response
+Attack Frameworks
+Cyber Kill Chain
+MITRE ATT&CK
+Diamond Model of Intrusion Analysis
+Incident Response Plan
+Documented Incident Type/Category
+Definitions
+Roles and Responsibilities
+Reporting Requirements and Escalation
+Cyber-Incident Response Teams
+Training, Tests, and Exercises
+Incident Response Process
+Preparation
+Incident Identification and Analysis
+Containment, Eradication,

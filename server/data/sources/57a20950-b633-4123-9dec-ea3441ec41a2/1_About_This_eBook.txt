@@ -1,0 +1,219 @@
+713
+752. 714
+
+About This eBook
+ePUB is an open, industry-standard format for eBooks.
+However, support of ePUB and its many features varies
+across reading devices and applications. Use your device
+or app settings to customize the presentation to your
+liking. Settings that you can customize often include font,
+font size, single or double column, landscape or portrait
+mode, and figures that you can click or tap to enlarge.
+For additional information about the settings and
+features on your reading device or app, visit the device
+manufacturer’s Web site.
+Many titles include programming code or configuration
+examples. To optimize the presentation of these
+elements, view the eBook in single-column, landscape
+mode and adjust the font size to the smallest setting. In
+addition to presenting code and configurations in the
+reflowable text format, we have included images of the
+code that mimic the presentation found in the print
+book; therefore, where the reflowable format may
+compromise the presentation of the code listing, you will
+see a “Click here to view code image” link. Click the link
+to view the print-fidelity code image. To return to the
+previous page viewed, click the Back button on your
+device or app.
+
+CompTIA Security+ SY0-601
+Exam Cram
+Marty M. Weiss
+Pearson
+221 River Street
+Hoboken, NJ 07030 USA
+®
+
+CompTIA Security+ SY0-601 Exam Cram
+Copyright © 2021 by Pearson Education, Inc.
+All rights reserved. This publication is protected by
+copyright, and permission must be obtained from the
+publisher prior to any prohibited reproduction, storage
+in a retrieval system, or transmission in any form or by
+any means, electronic, mechanical, photocopying,
+recording, or likewise. For information regarding
+permissions, request forms, and the appropriate contacts
+within the Pearson Education Global Rights &
+Permissions Department, please visit
+www.pearson.com/permissions.
+No patent liability is assumed with respect to the use of
+the information contained herein. Although every
+precaution has been taken in the preparation of this
+book, the publisher and author assume no responsibility
+for errors or omissions. Nor is any liability assumed for
+damages resulting from the use of the information
+contained herein.
+ISBN-13: 978-0-13-679867-5
+ISBN-10: 0-13-679867-5
+Library of Congress Control Number: 2020914528
+ScoutAutomatedPrintCode
+Trademarks
+All terms mentioned in this book that are known to be
+trademarks or service marks have been appropriately
+capitalized. Pearson IT Certification cannot attest to the
+accuracy of this information. Use of a term in this book
+should not be regarded as affecting the validity of any
+trademark or service mark.
+Warning and Disclaimer
+®
+
+Every effort has been made to make this book as
+complete and as accurate as possible, but no warranty or
+fitness is implied. The information provided is on an “as
+is” basis. The author and the publisher shall have neither
+liability nor responsibility to any person or entity with
+respect to any loss or damages arising from the
+information contained in this book.
+Special Sales
+For information about buying this title in bulk
+quantities, or for special sales opportunities (which may
+include electronic versions; custom cover designs; and
+content particular to your business, training goals,
+marketing focus, or branding interests), please contact
+our corporate sales department at
+corpsales@pearsoned.com or (800) 382-3419.
+For government sales inquiries, please contact
+governmentsales@pearsoned.com.
+For questions about sales outside the U.S., please contact
+intlcs@pearson.com.
+Editor-in-Chief
+Mark Taub
+Director, ITP Product Management
+Brett Bartow
+Executive Editor
+Nancy Davis
+Development Editor
+Ellie C. Bru
+Managing Editor
+Sandra Schroeder
+Project Editor
+Mandie Frank
+
+Copy Editor
+Kitty Wilson
+Indexer
+Ken Johnson
+Proofreader
+Donna Mulder
+Technical Editor
+Christopher Crayton
+Publishing Coordinator
+Cindy Teeters
+Designer
+Chuti Prasertsith
+Compositor
+codeMantra
+
+Credits
+Figure NumberAttribution/Credit
+Figur
+e 2-1
+Screenshot of an example of what user’s see when they were 
+infected with ransomware © WannaCry
+Figure 
+5-1
+Screenshot of an example of an interactive threat map © 2018 
+AO Kaspersky Lab
+Figure 
+10-4
+Screenshot of The AWS Management Console © 2020, 
+Amazon Web Services, Inc.
+Figure 12-1Courtesy of Apple, Inc.
+Figure 
+23-1
+Screenshot of Windows local security policy settings for the 
+account lockout policy © Microsoft 2020
+Figure 
+23-2
+Screenshot of Windows local security policy settings for the 
+password policy © Microsoft 2020
+Figure 
+24-1
+Screenshot of Standard Microsoft Windows file permissions 
+© Microsoft 2020
+Figure 25-
+1
+Screenshot of details of a digital certificate © 2020 Apple 
+Inc.
+Figur
+e 26-1
+Screenshot of using a command-line interface to access a 
+remote computer by using SSH © 2020 Apple, Inc.
+Figure 
+26-2
+Screenshot of using the cURL command to return the source 
+code of a web page © 2020 Apple, Inc.
+Figure 
+26-3
+Screenshot of using the ping command-line utility © 2020 
+Apple, Inc.
+Figur
+e 28-1
+Screenshot of an example of a SIEM system security dashboard 
+© security information and event management
+Figure 
+28-2
+Screenshot of Microsoft Windows Event Viewer Security log 
+© Microsoft 2020
+Figure 28-
+3
+Screenshot of Activity Monitor for macOS © 2020 Apple, 
+Inc.
+
+
+
+Contents at a Glance
+Introduction
+Part I: Attacks, Threats, and Vulnerabilities
+  Chapter 1   Social Engineering Techniques
+  Chapter 2   Attack Basics
+  Chapter 3   Application Attacks
+  Chapter 4   Network Attacks
+  Chapter 5   Threat Actors, Vectors, and Intelligence
+Sources
+  Chapter 6   Vulnerabilities
+  Chapter 7   Security Assessment Techniques
+  Chapter 8   Penetration Testing Techniques
+Part II: Architecture and Design
+  Chapter 9   Enterprise Security Concepts
+Chapter 10   Virtualization and Cloud Computing
+Chapter 11   Secure Application Development,
+Deployment, and Automation
+Chapter 12   Authentication and Authorization Design
+Chapter 13   Cybersecurity Resilience
+Chapter 14   Embedded and Specialized Systems
+Chapter 15   Physical Security Controls
+Chapter 16   Cryptographic Concepts
+Part III: Implementation
+Chapter 17   Secure Protocols
+Chapter 18   Host and Application Security Solutions
+
+Chapter 19   Secure Network Design
+Chapter 20   Wireless Security Settings
+Chapter 21   Secure Mobile Solutions
+Chapter 22   Cloud Cybersecurity Solutions
+Chapter 23   Identity and Account Management
+Controls
+Chapter 24   Authentication and Authorization
+Solutions
+Chapter 25   Public Key Infrastructure
+Part IV: Operations and Incident Response
+Chapter 26   Organizational Security
+Chapter 27   Incident Response
+Chapter 28   Incident Investigation
+Chapter 29   Incident Mitigation
+Chapter 30   Digital Forensics
+Part V: Governance, Risk, and Compliance
+Chapter 31   Control Types
+Chapter 32   Regulations, Standards, and Frameworks
+Chapter 33   Organizational Security Policies

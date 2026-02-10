@@ -1,0 +1,33 @@
+VPC)
+Security Groups
+Policies
+Managing Secrets
+Central Logging
+Third-Party Cloud Security Solutions
+What Next?
+
+Chapter 23:
+Identity and Account Management Controls
+Account Types
+Account Management
+Onboarding and Offboarding
+Least Privilege
+Access Auditing and Reviews
+Time of Day and Location Restrictions
+Logical Access Controls
+Account Policy Enforcement
+Password Complexity
+Account Expiration
+Forgotten Passwords
+Account Lockout
+Password Age and History
+Password Length and Rotation
+What Next?
+Chapter 24:
+Authentication and Authorization Solutions
+Authentication
+Unencrypted Plaintext Credentials
+Filesystem Permissions
+Access Violations
+Authentication Issues
+Authentication

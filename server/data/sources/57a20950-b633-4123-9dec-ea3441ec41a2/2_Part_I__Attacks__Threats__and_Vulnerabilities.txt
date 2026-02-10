@@ -1,0 +1,16 @@
+Chapter 34   Risk Management
+Chapter 35   Sensitive Data and Privacy
+Glossary of Essential Terms and
+Components
+Index
+
+Table of Contents
+Introduction
+Part I: Attacks, Threats, and Vulnerabilities
+Chapter 1:
+Social Engineering Techniques
+The Social Engineer
+Tailgating
+Dumpster Diving
+Shoulder Surfing
+Phishing a

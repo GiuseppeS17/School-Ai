@@ -1,0 +1,13 @@
+and
+Acceptable Use
+Legal Concerns
+Privacy
+Data Ownership and Support
+Patch and Antivirus Management
+Forensics
+What Next?
+Chapter 22:
+Cloud Cybersecurity Solutions
+Cloud Workloads
+Regions and Availability Zones
+Virtual Private Cloud (

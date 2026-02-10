@@ -1,0 +1,25 @@
+)
+Encrypted Traffic Management
+Data Integrity
+Data Availability
+Site Resiliency
+Geographic Considerations
+Deception and Disruption
+What Next?
+Chapter 10:
+Virtualization and Cloud Computing
+Virtualization
+Hypervisors
+Type I Hypervisors
+Type II Hypervisors
+
+Type I vs. Type II Hypervisors
+Containers and Microservices
+Virtual Desktop Infrastructure (VDI)
+Virtual Machine (VM) Sprawl Avoidance
+VM Escape Protection
+Software-Defined Networking (SDN)
+Infrastructure as Code (IaC)
+On-Premises vs. Off-Premises
+Cloud Models
+Service
