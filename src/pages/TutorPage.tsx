@@ -15,7 +15,7 @@ interface Message {
 export function TutorPage() {
     const { t } = useTranslation();
     const { isListening, transcript, startListening, stopListening, error: micError } = useSpeechRecognition();
-    const { speak, togglePlay, isSpeaking, isPaused, usingFallback } = useTextToSpeech();
+    const { speak, stop, togglePlay, isSpeaking, isPaused, usingFallback } = useTextToSpeech();
 
     const [messages, setMessages] = useState<Message[]>([
         { id: '1', text: "Ciao! Sono il tuo Tutor AI. Come posso aiutarti oggi?", sender: 'ai' }
@@ -24,6 +24,13 @@ export function TutorPage() {
     const messagesEndRef = useRef<HTMLDivElement>(null);
 
     const [error, setError] = useState<string | null>(null);
+
+    // Stop speech on unmount
+    useEffect(() => {
+        return () => {
+            stop();
+        };
+    }, [stop]);
 
     // Sync transcript to input - Append mode for continuous listening
     useEffect(() => {
@@ -64,9 +71,7 @@ export function TutorPage() {
         }
     };
 
-    const handleKeyDown = (e: React.KeyboardEvent) => {
-        if (e.key === 'Enter') handleSendMessage();
-    };
+
 
     return (
         <div className="max-w-6xl mx-auto pt-4 h-[calc(100vh-140px)] flex flex-col overflow-hidden">
@@ -130,10 +135,11 @@ export function TutorPage() {
                     </div>
 
                     {/* Input Area */}
-                    <div className="relative flex items-center gap-2">
+                    {/* Input Area */}
+                    <div className="relative flex items-end gap-2">
                         <button
                             onClick={isListening ? stopListening : startListening}
-                            className={`p-3 rounded-xl transition-all duration-300 ${isListening
+                            className={`p-3 rounded-xl transition-all duration-300 mb-1 ${isListening
                                 ? 'bg-red-500 text-white shadow-lg ring-4 ring-red-200 animate-pulse'
                                 : 'bg-surface border border-primary/10 text-text-muted hover:bg-primary/5'
                                 }`}
@@ -143,24 +149,31 @@ export function TutorPage() {
                         </button>
 
                         <div className="relative flex-1">
-                            <input
-                                type="text"
+                            <textarea
                                 value={inputValue}
                                 onChange={(e) => setInputValue(e.target.value)}
-                                onKeyDown={handleKeyDown}
+                                onKeyDown={(e) => {
+                                    if (e.key === 'Enter' && !e.shiftKey) {
+                                        e.preventDefault();
+                                        handleSendMessage();
+                                    }
+                                }}
                                 placeholder={isListening ? "Listening..." : "Type a message..."}
-                                className={`w-full pl-4 pr-12 py-3 border rounded-xl focus:outline-none focus:ring-2 transition-all text-sm text-text-main placeholder:text-text-muted ${isListening
+                                rows={3}
+                                className={`w-full px-4 py-3 border rounded-xl focus:outline-none focus:ring-2 transition-all text-sm text-text-main placeholder:text-text-muted resize-none custom-scrollbar min-h-[80px] max-h-[160px] ${isListening
                                     ? 'bg-red-50 border-red-200 focus:ring-red-200 placeholder:text-red-400'
                                     : 'bg-surface border-primary/10 focus:ring-primary/20'
                                     }`}
                             />
-                            <button
-                                onClick={handleSendMessage}
-                                className="absolute right-2 top-2 p-1.5 bg-primary text-white rounded-lg hover:bg-primary/90 transition-colors"
-                            >
-                                <Send size={16} />
-                            </button>
                         </div>
+
+                        <button
+                            onClick={handleSendMessage}
+                            disabled={!inputValue.trim()}
+                            className="p-3 bg-primary text-white rounded-xl hover:bg-primary/90 disabled:opacity-50 disabled:cursor-not-allowed transition-colors mb-1 shadow-sm"
+                        >
+                            <Send size={20} />
+                        </button>
                     </div>
                 </div>
             </div>

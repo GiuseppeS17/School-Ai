@@ -3,7 +3,8 @@ import ReactMarkdown from 'react-markdown';
 import remarkBreaks from 'remark-breaks';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { generateLesson, sendChatMessage, type Lesson } from '../services/api';
-import { ArrowLeft, Loader2, Play, Pause, Send, Bot, RefreshCw } from 'lucide-react';
+import { ArrowLeft, Loader2, Play, Pause, Send, Bot, RefreshCw, Mic, MicOff } from 'lucide-react';
+import { useSpeechRecognition } from '../hooks/useSpeechRecognition';
 import { useTextToSpeech } from '../hooks/useTextToSpeech';
 import { Avatar } from '../components/Avatar';
 
@@ -30,6 +31,14 @@ export function LessonPage() {
 
     // Audio
     const { speak, togglePlay, isSpeaking, isPaused, stop } = useTextToSpeech();
+    const { isListening, transcript, startListening, stopListening, hasRecognition } = useSpeechRecognition();
+
+    // Effect to update input with transcript
+    useEffect(() => {
+        if (isListening) {
+            setChatInput(transcript);
+        }
+    }, [transcript, isListening]);
 
     useEffect(() => {
         if (!courseId || !chapterTitle) {
@@ -233,19 +242,36 @@ export function LessonPage() {
                             <div ref={chatEndRef} />
                         </div>
 
-                        <div className="p-3 border-t border-gray-50 flex gap-2">
-                            <input
-                                type="text"
+                        <div className="p-3 border-t border-gray-50 flex items-end gap-2">
+                            <textarea
                                 value={chatInput}
                                 onChange={(e) => setChatInput(e.target.value)}
-                                onKeyDown={(e) => e.key === 'Enter' && handleSendMessage()}
-                                placeholder="Ask a question..."
-                                className="flex-1 bg-gray-50 border-transparent focus:bg-white focus:border-primary/20 rounded-xl px-4 py-2 text-sm outline-none transition-all"
+                                onKeyDown={(e) => {
+                                    if (e.key === 'Enter' && !e.shiftKey) {
+                                        e.preventDefault();
+                                        handleSendMessage();
+                                    }
+                                }}
+                                placeholder={isListening ? "Listening..." : "Ask a question..."}
+                                rows={3}
+                                className={`flex-1 bg-gray-50 border-transparent focus:bg-white focus:border-primary/20 rounded-xl px-4 py-3 text-sm outline-none transition-all resize-none custom-scrollbar min-h-[80px] max-h-[160px] ${isListening ? 'placeholder-red-500' : ''}`}
                             />
+                            {hasRecognition && (
+                                <button
+                                    onClick={isListening ? stopListening : startListening}
+                                    className={`p-3 rounded-xl transition-colors mb-1 ${isListening
+                                        ? 'bg-red-50 text-red-600 hover:bg-red-100 animate-pulse'
+                                        : 'bg-gray-100 text-gray-400 hover:bg-gray-200 hover:text-gray-600'
+                                        }`}
+                                    title={isListening ? "Stop Listening" : "Start Listening"}
+                                >
+                                    {isListening ? <MicOff size={18} /> : <Mic size={18} />}
+                                </button>
+                            )}
                             <button
                                 onClick={handleSendMessage}
                                 disabled={!chatInput.trim() || isChatLoading}
-                                className="p-2 bg-primary text-white rounded-xl hover:bg-primary/90 disabled:opacity-50 transition-colors"
+                                className="p-3 bg-primary text-white rounded-xl hover:bg-primary/90 disabled:opacity-50 transition-colors mb-1"
                             >
                                 <Send size={18} />
                             </button>

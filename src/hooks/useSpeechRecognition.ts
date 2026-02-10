@@ -20,6 +20,7 @@ export function useSpeechRecognition() {
             rec.onstart = () => {
                 console.log("Mic started");
                 setIsListening(true);
+                setTranscript(''); // Reset transcript on new session
                 setError(null);
             };
             rec.onend = () => {
@@ -29,11 +30,13 @@ export function useSpeechRecognition() {
             rec.onerror = (event: any) => {
                 console.error("Mic Error:", event.error);
                 if (event.error === 'network') {
-                    setError("Errore di Rete: Controlla la connessione internet.");
+                    // Brave/Chromium often throws 'network' if it can't reach Google APIs
+                    setError("Errore: Il browser non riesce a contattare il servizio vocale. Prova Chrome se usi Brave.");
                 } else if (event.error === 'not-allowed') {
                     setError("Permesso Negato: Abilita il microfono nel browser.");
                 } else if (event.error === 'no-speech') {
                     // Ignore no-speech, it just means silence
+                    return;
                 } else {
                     setError(`Errore Mic: ${event.error}`);
                 }
@@ -44,6 +47,7 @@ export function useSpeechRecognition() {
                     .map((result: any) => result[0].transcript)
                     .join('');
                 setTranscript(finalTranscript);
+                setError(null);
             };
 
             setRecognition(rec);

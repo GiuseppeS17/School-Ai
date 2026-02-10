@@ -12,6 +12,11 @@ dist
 dist-ssr
 *.local
 .DS_Store
+server/data/vector_store.json
+
+# Environment Variables
+.env
+.env.*
 
 # Editor directories and files
 .vscode/*

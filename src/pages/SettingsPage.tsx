@@ -97,7 +97,39 @@ export function SettingsPage() {
                     <h2 className="text-2xl font-semibold text-text-main">Voice Settings</h2>
                 </div>
                 <div className="bg-surface p-6 rounded-2xl border border-gray-100 shadow-sm">
-                    <p className="text-text-muted mb-4">Select the AI's voice (Microsoft Natural Recommended)</p>
+                    <div className="mb-6">
+                        <label className="block text-sm font-medium text-text-main mb-2">Voice Engine</label>
+                        <div className="flex gap-4">
+                            <button
+                                onClick={() => {
+                                    localStorage.setItem('app-tts-provider', 'browser');
+                                    window.location.reload(); // Simple reload to apply
+                                }}
+                                className={`flex-1 p-4 rounded-xl border-2 text-left transition-all ${!localStorage.getItem('app-tts-provider') || localStorage.getItem('app-tts-provider') === 'browser'
+                                    ? 'border-primary bg-primary/5 text-primary'
+                                    : 'border-gray-100 hover:border-gray-200 text-gray-600'
+                                    }`}
+                            >
+                                <span className="font-bold block">Standard</span>
+                                <span className="text-xs opacity-70">Free, fast, reliable.</span>
+                            </button>
+                            <button
+                                onClick={() => {
+                                    localStorage.setItem('app-tts-provider', 'openai');
+                                    window.location.reload();
+                                }}
+                                className={`flex-1 p-4 rounded-xl border-2 text-left transition-all ${localStorage.getItem('app-tts-provider') === 'openai'
+                                    ? 'border-primary bg-primary/5 text-primary'
+                                    : 'border-gray-100 hover:border-gray-200 text-gray-600'
+                                    }`}
+                            >
+                                <span className="font-bold block">Premium</span>
+                                <span className="text-xs opacity-70">High quality AI voice.</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <p className="text-text-muted mb-4">Select the specific voice (for Standard engine)</p>
                     <VoiceSelector />
                 </div>
             </section>
