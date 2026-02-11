@@ -17,7 +17,6 @@ server/data/vector_store.json
 # Environment Variables
 .env
 .env.*
-server/.env
 
 # Editor directories and files
 .vscode/*
