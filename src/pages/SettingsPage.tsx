@@ -61,7 +61,7 @@ export function SettingsPage() {
                 </div>
             </section>
 
-            <hr className="border-gray-200/50" />
+            <hr className="border-border" />
 
             {/* Language Section */}
             <section className="space-y-6">
@@ -77,7 +77,7 @@ export function SettingsPage() {
                             onClick={() => changeLanguage(lang)}
                             className={`px-6 py-3 rounded-xl font-medium transition-all duration-200 border ${i18n.language === lang
                                 ? 'bg-primary text-white border-primary shadow-sm'
-                                : 'bg-surface text-text-main border-gray-200 hover:border-primary/50'
+                                : 'bg-surface text-text-main border-border hover:border-primary/50'
                                 }`}
                         >
                             {lang === 'en' && 'English'}
@@ -88,7 +88,7 @@ export function SettingsPage() {
                 </div>
             </section>
 
-            <hr className="border-gray-200/50" />
+            <hr className="border-border" />
 
             {/* Voice Section */}
             <section className="space-y-6">
@@ -96,7 +96,7 @@ export function SettingsPage() {
                     <span className="p-2 bg-primary/10 text-primary rounded-xl">🗣️</span>
                     <h2 className="text-2xl font-semibold text-text-main">Voice Settings</h2>
                 </div>
-                <div className="bg-surface p-6 rounded-2xl border border-gray-100 shadow-sm">
+                <div className="bg-surface p-6 rounded-2xl border border-border shadow-sm">
                     <div className="mb-6">
                         <label className="block text-sm font-medium text-text-main mb-2">Voice Engine</label>
                         <div className="flex gap-4">
@@ -107,7 +107,7 @@ export function SettingsPage() {
                                 }}
                                 className={`flex-1 p-4 rounded-xl border-2 text-left transition-all ${!localStorage.getItem('app-tts-provider') || localStorage.getItem('app-tts-provider') === 'browser'
                                     ? 'border-primary bg-primary/5 text-primary'
-                                    : 'border-gray-100 hover:border-gray-200 text-gray-600'
+                                    : 'border-border hover:border-primary/30 text-text-muted'
                                     }`}
                             >
                                 <span className="font-bold block">Standard</span>
@@ -120,7 +120,7 @@ export function SettingsPage() {
                                 }}
                                 className={`flex-1 p-4 rounded-xl border-2 text-left transition-all ${localStorage.getItem('app-tts-provider') === 'openai'
                                     ? 'border-primary bg-primary/5 text-primary'
-                                    : 'border-gray-100 hover:border-gray-200 text-gray-600'
+                                    : 'border-border hover:border-primary/30 text-text-muted'
                                     }`}
                             >
                                 <span className="font-bold block">Premium</span>
@@ -172,7 +172,7 @@ function VoiceSelector() {
         <select
             value={selected}
             onChange={handleChange}
-            className="w-full max-w-md p-3 rounded-xl bg-background border border-gray-200 text-text-main focus:ring-2 focus:ring-primary/20 outline-none"
+            className="w-full max-w-md p-3 rounded-xl bg-background border border-border text-text-main focus:ring-2 focus:ring-primary/20 outline-none"
         >
             <option value="">Auto-Detect Best Voice</option>
             {relevantVoices.map(v => (

@@ -90,16 +90,13 @@ export const generateTest = async (courseId: string, chapterTitle: string, diffi
     return response.json();
 };
 
-
-
 export interface Lesson {
     title: string;
     content: string;
-    notes?: string;
     generatedAt: string;
 }
 
-export const generateLesson = async (courseId: string, chapterTitle: string, forceRegenerate: boolean = false): Promise<ReadableStreamDefaultReader<Uint8Array> | Lesson> => {
+export const generateLesson = async (courseId: string, chapterTitle: string, forceRegenerate: boolean = false): Promise<Lesson> => {
     const response = await fetch(`${API_BASE_URL}/api/lessons/generate`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -110,34 +107,5 @@ export const generateLesson = async (courseId: string, chapterTitle: string, for
         const errorData = await response.json().catch(() => ({}));
         throw new Error(errorData.error || `Failed to generate lesson: ${response.statusText}`);
     }
-
-    // Check if it's a JSON response (cached) or a stream (fresh generation)
-    const contentType = response.headers.get("content-type");
-    if (contentType && contentType.includes("application/json")) {
-        return response.json();
-    }
-
-    // Return the stream reader for fresh generation
-    if (response.body) {
-        return response.body.getReader();
-    }
-
-    throw new Error("No response body received");
-};
-
-export const updateLesson = async (courseId: string, chapterTitle: string, content: string, notes?: string): Promise<Lesson> => {
-    const response = await fetch(`${API_BASE_URL}/api/lessons/update`, {
-        method: 'PUT',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ courseId, chapterTitle, content, notes }),
-    });
-
-    if (!response.ok) {
-        const errorData = await response.json().catch(() => ({}));
-        throw new Error(errorData.error || `Failed to update lesson: ${response.statusText}`);
-    }
-
     return response.json();
 };

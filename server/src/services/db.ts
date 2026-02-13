@@ -29,12 +29,22 @@ export interface Test {
     createdAt: string;
 }
 
+export interface CloudNote {
+    id: string;
+    text: string;
+    x: number;
+    y: number;
+    color?: string;
+}
+
 export interface Lesson {
     id: string;
     courseId: string;
     chapterTitle: string;
     title: string;
     content: string;
+    notes?: string;
+    cloudNotes?: CloudNote[];
     generatedAt: string;
 }
 
@@ -48,7 +58,7 @@ class Database {
     private data: DatabaseSchema;
 
     constructor() {
-        this.data = { courses: [], tests: [] };
+        this.data = { courses: [], tests: [], lessons: [] };
         this.load();
     }
 
@@ -61,9 +71,10 @@ class Database {
             try {
                 const fileContent = fs.readFileSync(DB_FILE, 'utf-8');
                 this.data = JSON.parse(fileContent);
+                if (!this.data.lessons) this.data.lessons = [];
             } catch (error) {
                 console.error("Error reading DB file, initializing empty:", error);
-                this.data = { courses: [], tests: [] };
+                this.data = { courses: [], tests: [], lessons: [] };
             }
         } else {
             this.save();
@@ -118,6 +129,37 @@ class Database {
         );
         this.data.lessons.push(lesson);
         this.save();
+    }
+
+    public updateLesson(courseId: string, chapterTitle: string, content?: string, notes?: string, cloudNotes?: CloudNote[]): Lesson | null {
+        if (!this.data.lessons) {
+            console.log("[DB] UpdateLesson: No lessons array found!");
+            return null;
+        }
+
+        const lessonIndex = this.data.lessons.findIndex(l => l.courseId === courseId && l.chapterTitle === chapterTitle);
+        if (lessonIndex === -1) {
+            console.log(`[DB] UpdateLesson: Lesson not found for Course: ${courseId}, Chapter: ${chapterTitle}`);
+            return null;
+        }
+
+        // Update content if provided
+        if (content !== undefined) {
+            this.data.lessons[lessonIndex].content = content;
+        }
+
+        // Update notes if provided
+        if (notes !== undefined) {
+            this.data.lessons[lessonIndex].notes = notes;
+        }
+
+        // Update cloudNotes if provided
+        if (cloudNotes !== undefined) {
+            this.data.lessons[lessonIndex].cloudNotes = cloudNotes;
+        }
+
+        this.save();
+        return this.data.lessons[lessonIndex];
     }
 }
 

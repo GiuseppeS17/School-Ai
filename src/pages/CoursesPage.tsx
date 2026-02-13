@@ -93,18 +93,17 @@ export function CoursesPage() {
                         const remainingCount = (course.chapters?.length || 0) - 5;
 
                         return (
-                            <div key={course.id} className="bg-surface rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-md transition-all group h-fit">
+                            <div key={course.id} className="bg-surface rounded-2xl p-6 shadow-sm border border-border hover:shadow-md transition-all group h-fit">
                                 <div className="flex items-start gap-4 mb-4 relative">
                                     <div className="p-3 bg-primary/10 text-primary rounded-xl group-hover:bg-primary group-hover:text-white transition-colors">
                                         <Book size={24} />
                                     </div>
                                     <div className="flex-1">
                                         <h3 className="text-xl font-bold text-text-main line-clamp-1 mr-8">{course.title}</h3>
-                                        <p className="text-sm text-text-muted line-clamp-2 mt-1">{course.description}</p>
                                     </div>
                                     <button
                                         onClick={(e) => handleDeleteCourse(e, course.id)}
-                                        className="absolute -top-2 -right-2 p-2 text-gray-300 hover:text-red-500 hover:bg-red-50 rounded-lg transition-all opacity-0 group-hover:opacity-100"
+                                        className="absolute -top-2 -right-2 p-2 text-text-muted hover:text-red-500 hover:bg-red-500/10 rounded-lg transition-all opacity-0 group-hover:opacity-100"
                                         title="Delete Course"
                                     >
                                         <Trash2 size={18} />
@@ -112,14 +111,14 @@ export function CoursesPage() {
                                 </div>
 
                                 <div className="space-y-3">
-                                    <div className="text-xs font-semibold text-gray-400 uppercase tracking-wider">Chapters</div>
+                                    <div className="text-xs font-semibold text-text-muted uppercase tracking-wider">Chapters</div>
                                     {course.chapters && course.chapters.length > 0 ? (
                                         <ul className="space-y-2">
                                             {displayedChapters.map((chapter, idx) => (
                                                 <li
                                                     key={idx}
                                                     onClick={() => handleLessonSelect(course.id, chapter.title)}
-                                                    className="flex items-center gap-2 text-sm text-text-main p-2 rounded-lg hover:bg-gray-50 cursor-pointer transition-colors"
+                                                    className="flex items-center gap-2 text-sm text-text-main p-2 rounded-lg hover:bg-primary/5 cursor-pointer transition-colors"
                                                 >
                                                     <div className="w-1.5 h-1.5 rounded-full bg-primary/40"></div>
                                                     <span className="flex-1 line-clamp-1">{chapter.title}</span>
@@ -144,7 +143,7 @@ export function CoursesPage() {
                                             )}
                                         </ul>
                                     ) : (
-                                        <div className="text-sm text-gray-400 italic flex items-center gap-2">
+                                        <div className="text-sm text-text-muted italic flex items-center gap-2">
                                             <FileText size={14} /> No chapters detected
                                         </div>
                                     )}

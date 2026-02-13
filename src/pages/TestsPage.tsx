@@ -88,14 +88,14 @@ export function TestsPage() {
             </header>
 
             {!currentTest && !loading && (
-                <div className="bg-surface rounded-3xl p-8 border border-gray-100 shadow-sm">
+                <div className="bg-surface rounded-3xl p-8 border border-border shadow-sm">
                     <h2 className="text-xl font-bold mb-6 text-text-main">Create a New Challenge</h2>
 
                     <div className="grid md:grid-cols-2 gap-6 mb-8">
                         <div>
                             <label className="block text-sm font-medium text-text-muted mb-2">Select Book</label>
                             <select
-                                className="w-full p-3 rounded-xl border bg-white focus:ring-2 ring-primary/20 outline-none"
+                                className="w-full p-3 rounded-xl border bg-background text-text-main border-border focus:ring-2 ring-primary/20 outline-none"
                                 value={selectedCourse}
                                 onChange={(e) => { setSelectedCourse(e.target.value); setSelectedChapter(''); }}
                             >
@@ -107,7 +107,7 @@ export function TestsPage() {
                         <div>
                             <label className="block text-sm font-medium text-text-muted mb-2">Select Chapter</label>
                             <select
-                                className="w-full p-3 rounded-xl border bg-white focus:ring-2 ring-primary/20 outline-none"
+                                className="w-full p-3 rounded-xl border bg-background text-text-main border-border focus:ring-2 ring-primary/20 outline-none"
                                 value={selectedChapter}
                                 onChange={(e) => setSelectedChapter(e.target.value)}
                                 disabled={!selectedCourse}
@@ -125,8 +125,8 @@ export function TestsPage() {
                         onClick={handleGenerateTest}
                         disabled={!selectedCourse || !selectedChapter}
                         className={`w-full py-4 rounded-xl font-bold text-lg flex items-center justify-center gap-2 transition-all ${selectedCourse && selectedChapter
-                            ? 'bg-primary text-white hover:bg-primary/90 shadow-lg hover:translate-y-[-2px]'
-                            : 'bg-gray-100 text-gray-300 cursor-not-allowed'
+                            ? 'bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg hover:translate-y-[-2px]'
+                            : 'bg-gray-100 text-gray-400 dark:bg-gray-800 dark:text-gray-600 cursor-not-allowed'
                             }`}
                     >
                         <BrainCircuit size={24} /> {selectedChapter === 'GENERAL' ? 'Generate General Quiz' : 'Generate Quiz'}
@@ -158,7 +158,7 @@ export function TestsPage() {
                         const isWrong = submitted && userAnswers[q.id] !== q.correctAnswer;
 
                         return (
-                            <div key={q.id} className={`p-6 rounded-2xl border ${submitted ? (isCorrect ? 'border-green-200 bg-green-50' : (isWrong ? 'border-red-200 bg-red-50' : 'border-gray-100')) : 'bg-surface border-gray-100'} shadow-sm`}>
+                            <div key={q.id} className={`p-6 rounded-2xl border ${submitted ? (isCorrect ? 'border-green-200 bg-green-50' : (isWrong ? 'border-red-200 bg-red-50' : 'border-border')) : 'bg-surface border-border'} shadow-sm`}>
                                 <h3 className="text-lg font-semibold mb-4 flex gap-3">
                                     <span className="bg-primary/10 text-primary w-8 h-8 rounded-full flex items-center justify-center shrink-0">{idx + 1}</span>
                                     {q.text}
@@ -167,7 +167,7 @@ export function TestsPage() {
                                 <div className="space-y-3 pl-11">
                                     {q.options.map((opt, optIdx) => {
                                         const isSelected = userAnswers[q.id] === optIdx;
-                                        let btnClass = "border-gray-200 hover:bg-gray-50";
+                                        let btnClass = "border-border hover:bg-background";
 
                                         if (submitted) {
                                             if (optIdx === q.correctAnswer) btnClass = "bg-green-100 border-green-400 text-green-800";
@@ -198,14 +198,14 @@ export function TestsPage() {
                         {!submitted ? (
                             <button
                                 onClick={handleSubmit}
-                                className="px-8 py-3 bg-primary text-white rounded-xl font-bold text-lg hover:bg-primary/90 shadow-lg flex items-center gap-2"
+                                className="px-8 py-3 bg-primary text-primary-foreground rounded-xl font-bold text-lg hover:bg-primary/90 shadow-lg flex items-center gap-2"
                             >
                                 Submit Answers <ArrowRight />
                             </button>
                         ) : (
                             <button
                                 onClick={resetQuiz}
-                                className="px-8 py-3 bg-gray-800 text-white rounded-xl font-bold text-lg hover:bg-gray-700 shadow-lg flex items-center gap-2"
+                                className="px-8 py-3 bg-text-main text-background rounded-xl font-bold text-lg hover:opacity-90 shadow-lg flex items-center gap-2"
                             >
                                 <RefreshCw /> Try Another Quiz
                             </button>

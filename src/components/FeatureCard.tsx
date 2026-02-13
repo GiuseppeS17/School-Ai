@@ -15,7 +15,7 @@ export function FeatureCard({ title, description, icon: Icon, to, colorClass }: 
     const { t } = useTranslation();
     return (
         <Link to={to} className="group relative block h-full">
-            <div className="absolute inset-0 bg-surface rounded-2xl border border-gray-100 shadow-sm transition-all duration-300 group-hover:shadow-md group-hover:-translate-y-1"></div>
+            <div className="absolute inset-0 bg-surface rounded-2xl border border-border shadow-sm transition-all duration-300 group-hover:shadow-md group-hover:-translate-y-1"></div>
             <div className="relative p-8 flex flex-col h-full bg-surface rounded-2xl overflow-hidden border border-transparent group-hover:border-primary/10 transition-colors">
 
                 {/* Icon Background Blob */}

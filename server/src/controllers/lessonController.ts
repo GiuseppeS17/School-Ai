@@ -1,138 +1,175 @@
 import { Request, Response } from 'express';
+import fs from 'fs';
+import path from 'path';
 import { v4 as uuidv4 } from 'uuid';
 import { db } from '../services/db';
-import { getEmbedding, getChatCompletion } from '../services/openaiService';
+import { getEmbedding, getChatCompletionStream } from '../services/openaiService';
 import { VectorStore } from '../services/vectorStore';
+
+const DATA_DIR = path.join(__dirname, '../../data');
+const NOTES_DIR = path.join(DATA_DIR, 'My notes');
+
+// Ensure notes directory exists
+if (!fs.existsSync(NOTES_DIR)) {
+    fs.mkdirSync(NOTES_DIR, { recursive: true });
+}
+
+const getNoteFilePath = (courseId: string, chapterTitle: string) => {
+    // Sanitize to be safe for filenames
+    const safeTitle = chapterTitle.replace(/[^a-z0-9]/gi, '_').toLowerCase();
+    const safeCourse = courseId.replace(/[^a-z0-9]/gi, '_').toLowerCase();
+    return path.join(NOTES_DIR, `${safeCourse}_${safeTitle}.txt`);
+};
 
 export const generateLesson = async (req: Request, res: Response) => {
     const { courseId, chapterTitle, forceRegenerate } = req.body;
     console.log(`[LessonGen] START for "${chapterTitle}" (Course: ${courseId}) - Force: ${forceRegenerate}`);
 
-    // 1. Validation without crashing
     if (!courseId || !chapterTitle) {
         return res.status(400).json({ error: "courseId and chapterTitle are required" });
     }
 
-    try {
-        // 0. Check for existing lesson
-        if (!forceRegenerate) {
-            const existingLesson = db.getLesson(courseId, chapterTitle);
-            if (existingLesson) {
-                console.log("[LessonGen] Found existing lesson. Returning cached version.");
-                return res.json({
-                    title: existingLesson.title,
-                    content: existingLesson.content,
-                    generatedAt: existingLesson.generatedAt
-                });
+    // 0. Check for existing lesson (unless forced)
+    if (!forceRegenerate) {
+        const existingLesson = db.getLesson(courseId, chapterTitle);
+        if (existingLesson) {
+            const notePath = getNoteFilePath(courseId, chapterTitle);
+            let fileNotes = "";
+            if (fs.existsSync(notePath)) {
+                try {
+                    fileNotes = fs.readFileSync(notePath, 'utf-8');
+                } catch (e) {
+                    console.error("[LessonGen] Failed to read note file:", e);
+                }
             }
-        }
 
-        // 2. RAG Context Retrieval (Safe Mode)
+            console.log("[LessonGen] Found existing lesson. Returning cached version with file notes.");
+            return res.json({
+                title: existingLesson.title,
+                content: existingLesson.content,
+                notes: fileNotes || existingLesson.notes, // Prioritize file notes
+                generatedAt: existingLesson.generatedAt,
+                cached: true
+            });
+        }
+    }
+
+    // Stream Setup
+    res.setHeader('Content-Type', 'text/plain');
+    res.setHeader('Transfer-Encoding', 'chunked');
+
+    let fullContent = "";
+
+    try {
+        // 1. RAG Context Retrieval
         let context = "";
         try {
-            console.log("[LessonGen] Step 1: Fetching Context...");
+            console.log("[LessonGen] Fetching Context...");
             const searchEmbedding = await getEmbedding(chapterTitle);
-            const searchResults = await VectorStore.search(searchEmbedding, 8); // Reduced limit for speed/safety
+            const searchResults = await VectorStore.search(searchEmbedding, 5); // 5 chunks is a good balance
             if (searchResults && searchResults.length > 0) {
                 context = searchResults.map(r => r.text).join('\n\n');
-                console.log(`[LessonGen] Found ${searchResults.length} context chunks.`);
-            } else {
-                console.log("[LessonGen] No context found. Continuing safe.");
+                console.log(`[LessonGen] Context: ${searchResults.length} chunks.`);
             }
         } catch (ragError: any) {
-            console.warn("[LessonGen] RAG Warning (ignoring):", ragError.message);
-            // Proceed without context - DO NOT THROW
+            console.warn("[LessonGen] RAG Warning:", ragError.message);
         }
 
-        // 3. AI Generation (Safe Mode)
-        let lessonContent = "";
-        try {
-            console.log("[LessonGen] Step 2: Calling AI...");
+        // 2. AI Prompt
+        const systemPrompt = `You are a distinguished University Professor. 
+        Write an ENGAGING, deeply explanatory master-class lesson about "${chapterTitle}".
+        
+        Guidance:
+        - Use clear paragraphs.
+        - Use # and ## for headers.
+        - Connect concepts logically.
+        - Explain "Why" and "How".
+        - Be authoritative but inspiring.
+        
+        Total length should be comprehensive (approx 1000-1500 words).`;
 
-            const systemPrompt = `You are a distinguished University Professor and expert pedagogue. Your goal is to deliver a comprehensive, master-class level lesson on the topic.
+        const userPrompt = context
+            ? `Context:\n${context}\n\nGenerate the full lesson for: ${chapterTitle}`
+            : `Generate the full lesson for: ${chapterTitle}`;
 
-            Write an **ENGAGING**, interactive, and **DEEPLY EXPLANATORY** lesson about "${chapterTitle}".
+        const messages = [
+            { role: "system", content: systemPrompt },
+            { role: "user", content: userPrompt }
+        ];
 
-            **Critical Instruction**: Do NOT just list concepts. Explain them. CONNECT the dots.
-            - **Avoid "Listicle" style** BUT ensure readability.
-            - **Logical Separation**: COMPLETELY AVOID walls of text. If you discuss two different topics (e.g. Mannerism and Baroque), use separate paragraphs or sub-headers (###) to clearly distinguish them.
-            - **Readable Paragraphs**: Keep paragraphs visually distinct. Do not merge unrelated ideas into one block.
-            - Use bullet points *only* for fast facts or standard lists, but the core teaching must be narrative.
+        // 3. Streaming Generation
+        if (!process.env.OPENAI_API_KEY) {
+            res.write("Error: API Key missing.");
+            res.end();
+            return;
+        }
 
-            **Structural Requirements**:
-            1. **Title & Introduction**: Hook the student immediately.
-            2. **Core Concepts (Deep Dive)**: 
-               - Explain the "Why" and "How" in detail. 
-               - Use sub-headings (###) to separate major sub-concepts.
-               - Use analogies to make abstract concepts concrete.
-               - Don't just say "X is important". Explain *why* it drives the system.
-            3. **Advanced Analysis**: Discuss implications, nuances, or common misconceptions.
-            4. **Real-World Case Study**: Provide a detailed scenario/story, not just a one-line example.
-            5. **Critical Thinking**: Pose a challenging question to the student to make them think.
-            6. **Summary**: Brief recap.
+        console.log("[LessonGen] Starting Stream...");
+        const stream = await getChatCompletionStream(messages);
 
-            **Formatting & Style Guide**:
-            - **Use Emojis**: Use relevant emojis **SPARINGLY** and only where strictly relevant (e.g., major section headers).
-            - **Blockquotes**: Use blockquotes (>) for definitions or very important "Remember" notes.
-            - **Dividers**: Use horizontal rules (---) to visually separate major sections.
-            - **Tone**: Professional, authoritative, yet inspiring and energetic.
-
-            Base your lesson on the provided context, but expand upon it significantly with your expert knowledge.`;
-
-            const userPrompt = context
-                ? `Context from the course material:\n${context}\n\nPlease generate the full master-class lesson for: ${chapterTitle}`
-                : `Please generate the full master-class lesson for: ${chapterTitle}. No specific context provided, so rely on your general expert knowledge.`;
-
-            const messages = [
-                { role: "system", content: systemPrompt },
-                { role: "user", content: userPrompt }
-            ];
-
-            // Only make the expensive call if we have keys
-            if (process.env.OPENAI_API_KEY) {
-                lessonContent = await getChatCompletion(messages) || "";
-            } else {
-                lessonContent = "Error: API Key missing. Please check server logs.";
+        for await (const chunk of stream) {
+            const content = chunk.choices[0]?.delta?.content || "";
+            if (content) {
+                res.write(content);
+                fullContent += content;
             }
-
-        } catch (aiError: any) {
-            console.error("[LessonGen] AI Error:", aiError.message);
-            // Fallback content if AI fails (e.g., timeout, rate limit)
-            lessonContent = `
-# ${chapterTitle}
-
-*Automatic Fallback Lesson*
-
-We encountered a temporary issue generating the custom lesson content. However, here is what you should know about **${chapterTitle}**:
-
-1.  This is a key concept in the course.
-2.  Please refer to the source PDF for full details while we fix the AI connection.
-3.  Error details: ${aiError.message}
-            `.trim();
         }
 
-        // 4. Save and Return
+        // 4. Save *after* success
         const newLesson = {
             id: uuidv4(),
             courseId,
             chapterTitle,
             title: chapterTitle,
-            content: lessonContent || "## Content Generation Failed\n\nPlease try again later.",
+            content: fullContent,
             generatedAt: new Date().toISOString()
         };
-
         db.addLesson(newLesson);
-        console.log("[LessonGen] Success. Saved to DB and sending response.");
+        console.log(`[LessonGen] Completed. Length: ${fullContent.length}`);
 
-        return res.json({
-            title: newLesson.title,
-            content: newLesson.content,
-            generatedAt: newLesson.generatedAt
-        });
+        res.end();
 
-    } catch (criticalError: any) {
-        // This catches only unexpected logic errors in *this* file
-        console.error("[LessonGen] CRITICAL:", criticalError);
-        return res.status(500).json({ error: "Internal Generation Error. See logs." });
+    } catch (error: any) {
+        console.error("[LessonGen] Critical Error:", error);
+        if (!res.headersSent) {
+            res.status(500).json({ error: error.message });
+        } else {
+            res.write("\n\n[ERROR: Generation failed mid-stream]");
+            res.end();
+        }
+    }
+};
+
+export const updateLessonContent = async (req: Request, res: Response) => {
+    const { courseId, chapterTitle, content, notes, cloudNotes } = req.body;
+
+    if (!courseId || !chapterTitle) {
+        return res.status(400).json({ error: "Missing required fields: courseId, chapterTitle" });
+    }
+
+    try {
+        const updatedLesson = db.updateLesson(courseId, chapterTitle, content, notes, cloudNotes);
+
+        if (!updatedLesson) {
+            return res.status(404).json({ error: "Lesson not found to update." });
+        }
+
+        // File-based Note Saving
+        if (notes !== undefined) {
+            try {
+                const notePath = getNoteFilePath(courseId, chapterTitle);
+                fs.writeFileSync(notePath, notes, 'utf-8');
+                console.log(`[LessonUpdate] Saved notes to file: ${notePath}`);
+            } catch (e) {
+                console.error("[LessonUpdate] Failed to write note file:", e);
+            }
+        }
+
+        console.log(`[LessonUpdate] Updated lesson/notes for "${chapterTitle}"`);
+        return res.json({ ...updatedLesson, notes }); // Return the updated notes content
+
+    } catch (error: any) {
+        console.error("[LessonUpdate] Error:", error);
+        return res.status(500).json({ error: "Failed to update lesson." });
     }
 };

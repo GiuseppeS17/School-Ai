@@ -35,16 +35,6 @@ export const getChatCompletion = async (messages: any[]) => {
     return response.choices[0].message.content;
 };
 
-export const getChatCompletionStream = async (messages: any[]) => {
-    const stream = await openai.chat.completions.create({
-        model: 'gpt-4o-mini',
-        messages: messages,
-        temperature: 0.7,
-        stream: true,
-    });
-    return stream;
-};
-
 export const generateCourseOutline = async (textContext: string): Promise<{ title: string; chapters: { title: string; start_context: string }[] }> => {
     if (!process.env.OPENAI_API_KEY) {
         throw new Error("OPENAI_API_KEY is not set");

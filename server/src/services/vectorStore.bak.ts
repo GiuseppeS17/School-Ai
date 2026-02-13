@@ -51,20 +51,14 @@ export const VectorStore = {
     },
 
     async search(queryEmbedding: number[], limit: number = 3): Promise<DocumentChunk[]> {
-        // Ensure store is loaded if empty (first time or restart)
+        // Ensure store is loaded
         if (memoryStore.length === 0) {
             try {
-                console.log("[VectorStore] Loading store from disk...");
                 const data = await fs.readFile(STORAGE_PATH, 'utf-8');
                 memoryStore = JSON.parse(data);
-                console.log(`[VectorStore] Loaded ${memoryStore.length} chunks.`);
             } catch (e) {
-                console.warn("[VectorStore] Store empty or not found.");
                 return []; // Store empty
             }
-        } else {
-            // Debug log to confirm cache hit (optional, remove for prod)
-            // console.log(`[VectorStore] Using cached store with ${memoryStore.length} chunks.`);
         }
 
         const scored = memoryStore.map(doc => ({
